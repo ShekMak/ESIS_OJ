@@ -26,7 +26,7 @@
                 ?>
                     <p class="post-content">
                     <?=$d['contenu']?>
-                    <a href="suite.php">Lire la suite</a>
+                    <a href="suite.php?id=<?=$d['id']?>">Lire la suite</a>
                     </p>
                     <br/>
                     <p class="post-like">
