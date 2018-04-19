@@ -33,7 +33,7 @@
 		}
 		
 		public function getAllPublication() {
-            $str = "SELECT * FROM publication";
+            $str = "SELECT * FROM publication ORDER BY date DESC";
             $req = $this->db->prepare($str);
             $req->execute();
             return $req;
