@@ -1,5 +1,5 @@
 <?php require_once('check_connexion.php');
-    if (isset($_GET['id'])){
+    if (isset($_GET['id']) && !empty($_GET['id'])){
 
     }else{
         header('Location:all.php');
