@@ -33,11 +33,14 @@
 		}
 		
 		public function getAllPublication() {
-			
+            $str = "SELECT * FROM publication";
+            $req = $this->db->prepare($str);
+            $req->execute();
+            return $req;
 		}
 		
 		public function like($publication) {
-			
+
 		}
 		
 		public function dislike($publication) {
