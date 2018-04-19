@@ -11,8 +11,13 @@
 			
 		}
 		
-		public function getAllCommentaires() {
-			
+		public function getAllCommentaires($idPublication) {
+            $str = "SELECT * FROM commentaire WHERE idPublication = :idPublication  ORDER BY date DESC";
+            $req = $this->db->prepare($str);
+            $req->execute(array(
+                'idPublication' => $idPublication
+            ));
+            return $req;
 		}
 		
 		public function like($commentaire) {
