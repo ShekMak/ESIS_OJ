@@ -13,48 +13,20 @@
 		<div class="content">
 			<div class="toutes-publications">
 				<h2>Top 10</h2>
-				<p class="post-content">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
-					porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, 
-					purus lectus malesuada libero...
-					<a href="suite.php">Lire la suite</a>
-				</p>
-				<br/>
-				<p class="post-like">
-					<em>Posté le 02/10/2018</em> 
-					<span class="like-dislike">
-						<a href="like.php">Like</a>(25) | 
-						<a href="dislike.php">Dislike</a>(1)
-					</span>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
-					porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, 
-					purus lectus malesuada libero...
-					<a href="suite.php">Lire la suite</a>
-				</p>
-				<br/>
-				<p class="post-like">
-					<em>Posté le 02/10/2018</em> 
-					<span class="like-dislike">
-						<a href="like.php">Like</a>(25) | 
-						<a href="dislike.php">Dislike</a>(1)
-					</span>
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
-					porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, 
-					purus lectus malesuada libero...
-					<a href="suite.php">Lire la suite</a>
-				</p>
-				<br/>
-				<p class="post-like">
-					<em>Posté le 02/10/2018</em> 
-					<span class="like-dislike">
-						<a href="like.php">Like</a>(25) | 
-						<a href="dislike.php">Dislike</a>(1)
-					</span>
-				</p>
+                <?php
+                    include_once('../controllers/top10.php');
+                    foreach ($data as $d) {
+                ?>
+                    <p class="post-content"><?=$d['contenu']?></p>
+                    <br/>
+                    <p class="post-like">
+                        <em>Posté le <?=$d['date']?></em>
+                        <span class="like-dislike">
+                            <a href="like.php">Like</a>(<?=$d['nblike']?>) |
+                            <a href="dislike.php">Dislike</a>(<?=$d['nbdislike']?>)
+                        </span>
+                    </p>
+                <?php } ?>
 			</div>
 		</div>
 		
