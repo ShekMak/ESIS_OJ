@@ -14,7 +14,6 @@
 		
 		if($res) {
 			//Créer une session
-			
 			session_start();
 			$_SESSION['user'] = $etudao->getInfoEtudiant($matricule);
 			
