@@ -25,8 +25,8 @@
                     <p class="post-like">
                         <em>Posté le <?=$d['date']?></em>
                         <span class="like-dislike">
-                                <a href="like.php">Like</a>(<?=$d['nblike']?>) |
-                                <a href="dislike.php">Dislike</a>(<?=$d['nbdislike']?>)
+                                <a href="like.php?id=<?=$d['id']?>">Like</a>(<?=$d['nblike']?>) |
+                                <a href="dislike.php?id=<?=$d['id']?>">Dislike</a>(<?=$d['nbdislike']?>)
                             </span>
                     </p>
                 <?php } ?>
