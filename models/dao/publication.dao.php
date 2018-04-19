@@ -46,7 +46,10 @@
 		}
 		
 		public function top10() {
-			
+            $str = "SELECT * FROM publication ORDER BY (nblike-nbdislike) DESC LIMIT 10";
+            $req = $this->db->prepare($str);
+            $req->execute();
+            return $req;
 		}
 		
 		public function getAllPublication() {
