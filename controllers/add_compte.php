@@ -1,6 +1,6 @@
 <?php
-	require_once('../models/structure/etudiant.class.php');
-	require_once('../models/dao/connexiondb.class.php');
+	require_once('../models/structure/publication.class.php');
+	require_once('../models/dao/publication.dao.php');
 	require_once('../models/dao/etudiant.dao.php');
 	
 	if(isset($_POST['matricule'], $_POST['pwd'], $_POST['pwdconf'])) {
