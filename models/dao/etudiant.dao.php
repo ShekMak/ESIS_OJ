@@ -38,5 +38,23 @@
 				return False;
 			}
 		}
+
+		public function getInfoEtudiant($matricule){
+		    $identite['id'] = "";
+		    $str = "SELECT * FROM etudiant WHERE matricule = :matricule";
+		    $req = $this->db->prepare($str);
+		    $req->execute(array(
+		        'matricule' => $matricule
+            ));
+
+            while($res = $req->fetch()){
+                $identite['id'] = $res['id'];
+                $identite['matricule'] = $res['matricule'];
+                $identite['pwd'] = $res['pwd'];
+            }
+
+            return $identite;
+
+        }
 	}
 ?>
