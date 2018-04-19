@@ -40,7 +40,17 @@
 		}
 		
 		public function like($publication) {
+            $str = "UPDATE publication SET nblike = nblike + 1 WHERE id = :idpublication";
+            $req = $this->db->prepare($str);
+            $res = $req->execute(array(
+                'idpublication' => $publication->getId()
+            ));
 
+            if($res) {
+                return True;
+            } else {
+                return False;
+            }
 		}
 		
 		public function dislike($publication) {
