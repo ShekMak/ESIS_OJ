@@ -25,28 +25,31 @@
 				<p class="post-like">
 					<strong><em>Posté le <?=$data['date']?></em></strong>
 					<span class="like-dislike">
-						<a href="like.php?id=<?=$d['id']?>">Like</a>(<?=$data['nblike']?>) |
-						<a href="dislike.php?id=<?=$d['id']?>">Dislike</a>(<?=$data['nbdislike']?>)
+						<a href="like.php?id=<?=$data['id']?>">Like</a>(<?=$data['nblike']?>) |
+						<a href="dislike.php?id=<?=$data['id']?>">Dislike</a>(<?=$data['nbdislike']?>)
 					</span>
 				</p>
 				<p class="post-content"><?=$data['contenu']?></p>
-				<h3>2 Commentaires</h3>
-				<p class="post-content-comment">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
-					porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, 
-					purus lectus malesuada libero
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
-					porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, 
-					purus lectus malesuada libero
-				</p>
-				<br/>
-				<p class="post-like-comment">
-					<em>Posté le 02/10/2018</em> 
-					<span class="like-dislike-comment">
-						<a href="like.php">Like</a>(25) | 
-						<a href="dislike.php">Dislike</a>(1)
-					</span>
-				</p>
+                <?php  include_once('../controllers/all_commentaire.php')?>
+				<h3>
+                    <?php
+                        if ($nombreCommentaire >= 2)
+                            echo  $nombreCommentaire.' Commentaires';
+                        else
+                            echo $nombreCommentaire.' Commentaire';
+				    ?>
+                </h3>
+                <?php  foreach ($donnees as $d){ ?>
+                    <p class="post-content-comment">$d['contenu']</p>
+                    <br/>
+                    <p class="post-like-comment">
+                        <em>Posté le $d['date']</em>
+                        <span class="like-dislike-comment">
+                            <a href="like.php">Like</a>($d['nblike']) |
+                            <a href="dislike.php">Dislike</a>($d['nbdislike'])
+                        </span>
+                    </p>
+                <?php  } ?>
 				<form method="post" action="" class="add-comment">
 					<textarea name="contenu" placeholder="Votre commentaire ici" required></textarea><br />
 					<input type="submit" value="Ajouter" />
