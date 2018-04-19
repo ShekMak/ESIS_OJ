@@ -8,8 +8,25 @@
 		}
 		
 		public function getPublication($publication) {
-			
-		}
+            $pub['id'] = "";
+            $str = "SELECT * FROM publication WHERE id = :id";
+            $req = $this->db->prepare($str);
+            $req->execute(array(
+                'id' => $publication->getId()
+            ));
+
+            while($res = $req->fetch()){
+                $pub['id'] = $res['id'];
+                $pub['idEtudiant'] = $res['idEtudiant'];
+                $pub['contenu'] = $res['contenu'];
+                $pub['date'] = $res['date'];
+                $pub['nblike'] = $res['nblike'];
+                $pub['nbdislike'] = $res['nbdislike'];
+            }
+
+            return $pub;
+
+        }
 		
 		public function nouvellePublication($publication) {
             $str = "INSERT INTO publication VALUES(null, :idEtudiant, :contenu, now(), :nblike, :nbdislike)";
