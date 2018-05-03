@@ -4,11 +4,11 @@
     require_once('../models/dao/publication.dao.php');
     require_once('../models/dao/connexiondb.class.php');
 
-    if (isset($_SESSION['user'])){
+    if (isset($_SESSION['matricule'])){
         if (isset($_POST['contenu']) && !empty($_POST['contenu'])){
             $contenu = $_POST['contenu'];
 
-            $publication = new Publication(0,$_SESSION['user']['id'],$contenu,"",0,0);
+            $publication = new Publication(0,$_SESSION['matricule']['id'],$contenu,"",0,0);
             $publicationDAO = new PublicationDAO();
             $res = $publicationDAO->nouvellePublication($publication);
 
