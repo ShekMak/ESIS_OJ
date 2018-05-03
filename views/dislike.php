@@ -21,6 +21,15 @@ if (isset($_GET['id'])){
     }else{
         header('Location: top10.php?failed');
     }
+}elseif (isset($_GET['id_'])){
+    $id = $_GET['id_'];
+    $publication = new Publication($id,0,'','',0,0);
+    include_once('../controllers/add_dislike.php');
+    if (res){
+        header('Location: today.php');
+    }else{
+        header('Location: today.php?failed');
+    }
 } else{
     header('Location: all.php');
 }

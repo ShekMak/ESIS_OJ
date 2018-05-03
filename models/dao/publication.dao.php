@@ -58,6 +58,14 @@
             $req->execute();
             return $req;
 		}
+
+
+        public function getAllPublicationOfDay() {
+            $str = "SELECT * FROM publication WHERE DATEDIFF(date,now()) = 0 ORDER BY date DESC";
+            $req = $this->db->prepare($str);
+            $req->execute();
+            return $req;
+        }
 		
 		public function like($publication) {
             $str = "UPDATE publication SET nblike = nblike + 1 WHERE id = :idpublication";
