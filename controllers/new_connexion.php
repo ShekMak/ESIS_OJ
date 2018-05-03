@@ -15,8 +15,8 @@
 		if($res) {
 			//Créer une session
 			session_start();
-			$_SESSION['user'] = $etudao->getInfoEtudiant($matricule);
-			
+			$_SESSION['matricule'] = $etudao->getInfoEtudiant($matricule);
+
 			header('Location: ../views/today.php');
 		} else {
 			header('Location: ../views/index.php?error=3');
