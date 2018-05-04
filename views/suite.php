@@ -46,7 +46,7 @@
 					</span>
 				</p>
 				<p class="post-content"><?=$data['contenu']?></p>
-                <?php  include_once('../controllers/all_commentaire.php')?>
+                <?php  include_once('../controllers/all_commentaire.php');?>
 				<h3>
                     <?php
                         if ($nombreCommentaire >= 2)
@@ -55,7 +55,7 @@
                             echo $nombreCommentaire.' Commentaire';
 				    ?>
                 </h3>
-                <?php  foreach ($donnees as $d){ ?>
+                <?php  foreach ($donnees as $d){ //print_r($d)?>
                     <p class="post-content-comment"><?=$d['contenu']?></p>
                     <br/>
                     <p class="post-like-comment">
