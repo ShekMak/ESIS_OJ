@@ -61,10 +61,16 @@
 
 
         public function getAllPublicationOfDay() {
+            $resultat = [];
             $str = "SELECT * FROM publication WHERE DATEDIFF(date,now()) = 0 ORDER BY date DESC";
             $req = $this->db->prepare($str);
-            $req->execute();
-            return $req;
+            $req->execute();   
+            $i = 0;         
+            while ($d = $req->fetch()) {
+                $resultat[$i] = $d;
+                $i++;
+            }
+            return $resultat;
         }
 		
 		public function like($publication) {
