@@ -5,5 +5,5 @@
     $commentaireDAO = new CommentaireDAO();
     $donnees = $commentaireDAO->getAllCommentaires($id);
     $nombreCommentaire = count($donnees);
-
+    
 ?>
