@@ -13,7 +13,7 @@
 		<div class="content">
             <?php
                 include_once('../controllers/the_day.php');
-                if(count($data)< 1){
+                if(empty($data)){
             ?>
                 <div class="aucune-publication">
                     <h2>Aucune publication du jour</h2>
