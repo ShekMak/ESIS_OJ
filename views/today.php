@@ -19,13 +19,13 @@
                     <h2>Aucune publication du jour</h2>
                     <br/><a href="new.php">Publier</a>
                 </div>
-            <?php  }else{ ?>
+            <?php  }else{?>
             <div class="toutes-publications">
                 <a href="new.php">Publier</a>
                 <h2>Quelques publications du jour</h2>
                 <?php
-                foreach ($data as $d){
-                    ?>
+                     foreach ($data as $d){
+                         ?>
                     <p class="post-content">
                         <?=$d['contenu']?>
                         <a href="suite.php?id=<?=$d['id']?>">Lire la suite</a>
