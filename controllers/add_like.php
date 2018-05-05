@@ -1,4 +1,9 @@
 <?php
-    $publicationDAO = new PublicationDAO();
-    $res = $publicationDAO->like($publication);
+    if (isset($val)){
+        $commentaireDAO = new CommentaireDAO();
+        $res = $commentaireDAO->like($commentaire);
+    }else{
+        $publicationDAO = new PublicationDAO();
+        $res = $publicationDAO->like($publication);
+    }
 ?>
