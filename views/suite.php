@@ -16,8 +16,24 @@
 	</head>
 	<body>
 		<?php include_once('head.php'); ?>
-		
+        <?php
+        if (isset($_GET['insert'])){
+            echo '<br/><em>Votre publication a été ajoutée</em>';
+        }elseif (isset($_GET['update'])){
+            echo '<br/><em>Une erreur est survenue lors de votre publication! Veuillez recommencer s\'il vous plaît</em>';
+        }
+        else{
+
+        }
+        ?>
 		<div class="content">
+            <?php
+            if (isset($_GET['failed'])){
+                echo '<p><br/><em>Votre opération a échouée!Veuillez recommencer s\'il vous plaît</em></p>';
+            }else{
+
+            }
+            ?>
             <?php
                 include_once('../controllers/the_publication.php');
             ?>
@@ -40,17 +56,18 @@
 				    ?>
                 </h3>
                 <?php  foreach ($donnees as $d){ ?>
-                    <p class="post-content-comment">$d['contenu']</p>
+                    <p class="post-content-comment"><?=$d['contenu']?></p>
                     <br/>
                     <p class="post-like-comment">
-                        <em>Posté le $d['date']</em>
+                        <em>Posté le <?=$d['date']?></em>
                         <span class="like-dislike-comment">
-                            <a href="like.php">Like</a>($d['nblike']) |
-                            <a href="dislike.php">Dislike</a>($d['nbdislike'])
+                            <a href="like.php?_id_=<?=$d['id']?>&i_d=<?=$data['id']?>">Like</a>(<?=$d['nblike']?>) |
+                            <a href="dislike.php?_id_=<?=$d['id']?>&i_d=<?=$data['id']?>">Dislike</a>(<?=$d['nbdislike']?>)
                         </span>
                     </p>
                 <?php  } ?>
-				<form method="post" action="" class="add-comment">
+				<form method="post" action="../controllers/add_commentaire.php" class="add-comment">
+                    <input type="hidden" value="<?=$data['id']?>" name="id">
 					<textarea name="contenu" placeholder="Votre commentaire ici" required></textarea><br />
 					<input type="submit" value="Ajouter" />
 				</form>

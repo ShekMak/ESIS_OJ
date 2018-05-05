@@ -1,6 +1,8 @@
 <?php
     require_once('../models/structure/publication.class.php');
     require_once('../models/dao/publication.dao.php');
+    require_once ('../models/structure/commentaire.class.php');
+    require_once ('../models/dao/commentaire.dao.php');
     require_once('../models/dao/connexiondb.class.php');
 
     if (isset($_GET['id'])){
@@ -29,6 +31,17 @@
             header('Location: today.php');
         }else{
             header('Location: today.php?failed');
+        }
+    }elseif (isset($_GET['_id_'],$_GET['i_d'])){
+        $id = $_GET['_id_'];
+        $val = $_GET['i_d'];
+        $commentaire = new Commentaire($id,$val,0,'','',0,0);
+        include_once('../controllers/add_like.php');
+        if (res){
+            header('Location: suite.php?id='.$val);
+            echo "Je suis la";
+        }else{
+            header('Location: suite.php?id='.$val.'failed');
         }
     } else{
         header('Location: all.php');
