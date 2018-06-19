@@ -19,4 +19,6 @@
             header('Location:../views/suite.php?id='.$id.'?&update');
         }
 
+    }else {
+        echo "Erreur dans les données";
     }
