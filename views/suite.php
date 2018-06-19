@@ -18,7 +18,7 @@
 		<?php include_once('head.php'); ?>
         <?php
         if (isset($_GET['insert'])){
-            echo '<br/><em>Votre publication a été ajoutée</em>';
+            echo '<br/><em>Votre commentaire a été ajouté</em>';
         }elseif (isset($_GET['update'])){
             echo '<br/><em>Une erreur est survenue lors de votre publication! Veuillez recommencer s\'il vous plaît</em>';
         }
