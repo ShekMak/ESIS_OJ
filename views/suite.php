@@ -18,9 +18,9 @@
 		<?php include_once('head.php'); ?>
         <?php
         if (isset($_GET['insert'])){
-            echo '<br/><em>Votre commentaire a été ajouté</em>';
+            echo '<center><br/><em>Votre commentaire a été ajouté</em></center>';
         }elseif (isset($_GET['update'])){
-            echo '<br/><em>Une erreur est survenue lors de votre publication! Veuillez recommencer s\'il vous plaît</em>';
+            echo '<center><br/><em>Une erreur est survenue lors de votre publication! Veuillez recommencer s\'il vous plaît</em></center>';
         }
         else{
 
@@ -29,7 +29,7 @@
 		<div class="content">
             <?php
             if (isset($_GET['failed'])){
-                echo '<p><br/><em>Votre opération a échouée!Veuillez recommencer s\'il vous plaît</em></p>';
+                echo '<center><p><br/><em>Votre opération a échouée!Veuillez recommencer s\'il vous plaît</em></p></center>';
             }else{
 
             }
