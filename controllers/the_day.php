@@ -4,5 +4,5 @@
 
     $publicationDAO = new PublicationDAO();
     $data = $publicationDAO->getAllPublicationOfDay();
-    //echo date('Y-m-d');
+
 ?>
