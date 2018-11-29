@@ -18,9 +18,9 @@ CREATE SCHEMA IF NOT EXISTS `esis-oj` DEFAULT CHARACTER SET utf8 COLLATE utf8_ge
 USE `esis-oj` ;
 
 -- -----------------------------------------------------
--- Table `esis-oj`.`Etudiant`
+-- Table `esis-oj`.`etudiant`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `esis-oj`.`Etudiant` (
+CREATE TABLE IF NOT EXISTS `esis-oj`.`etudiant` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `matricule` VARCHAR(255) NOT NULL,
   `pwd` VARCHAR(255) NOT NULL,
@@ -31,9 +31,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `esis-oj`.`Publication`
+-- Table `esis-oj`.`publication`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `esis-oj`.`Publication` (
+CREATE TABLE IF NOT EXISTS `esis-oj`.`publication` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idEtudiant` INT NOT NULL,
   `contenu` TEXT NOT NULL,
@@ -52,9 +52,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `esis-oj`.`Commentaire`
+-- Table `esis-oj`.`commentaire`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `esis-oj`.`Commentaire` (
+CREATE TABLE IF NOT EXISTS `esis-oj`.`commentaire` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idEtudiant` INT NOT NULL,
   `idPublication` INT NOT NULL,
